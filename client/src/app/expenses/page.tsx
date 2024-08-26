@@ -99,9 +99,7 @@ const Expenses = () => {
   return (
     <div className="mb-5">
       <Header name="Expenses" />
-      <p className="text-sm text-gray-500 mt-2">
-        This store's expenses over time.
-      </p>
+      <p className="text-sm text-gray-500 mt-2">Your expenses over time.</p>
 
       <div className="flex flex-col md:flex-row justify-between gap-4">
         <div className="w-full md:w-1/3 bg-white shadow rounded-lg p-6">
