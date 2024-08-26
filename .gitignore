@@ -1,0 +1,13 @@
+# Node modules
+**/node_modules/
+
+# Build directories
+**/dist/
+client/.next/
+
+# Environment files
+**/.env
+**/.env.*
+
+# Other
+.prettierrc
