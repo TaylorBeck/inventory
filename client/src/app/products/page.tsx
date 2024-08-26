@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import { useCreateProductMutation, useGetProductsQuery } from '@/state/api';
 
+import Image from 'next/image';
 import { PlusCircleIcon, SearchIcon } from 'lucide-react';
 import Header from '@/app/(components)/Header';
 import Rating from '@/app/(components)/rating';
@@ -72,7 +73,15 @@ const Products = () => {
               className="border shadow rounded-md w-full max-w-full mx-auto py-4"
             >
               <div className="flex flex-col items-center">
-                img
+                <Image
+                  className="h-36 w-36 mb-3 rounded-2xl"
+                  src={`https://s3-taylor-inventorymanagement.s3.us-west-2.amazonaws.com/product${
+                    Math.floor(Math.random() * 3) + 1
+                  }.png`}
+                  alt={product.name}
+                  width={150}
+                  height={150}
+                />
                 <h3 className="text-lg text-gray-900 font-semibold">
                   {product.name}
                 </h3>

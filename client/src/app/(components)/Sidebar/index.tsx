@@ -6,7 +6,9 @@ import { usePathname } from 'next/navigation';
 import { useAppDispatch, useAppSelector } from '@/app/redux';
 import { setIsSidebarCollapsed } from '@/state';
 
+import Image from 'next/image';
 import Link from 'next/link';
+
 import {
   Archive,
   CircleDollarSign,
@@ -78,7 +80,13 @@ const Sidebar = () => {
           isSidebarCollapsed ? 'px-5' : 'px-8'
         }`}
       >
-        <div>logo</div>
+        <Image
+          className="w-8 rounded"
+          src="https://s3-taylor-inventorymanagement.s3.us-west-2.amazonaws.com/logo.png"
+          alt="Inventory Logo"
+          width={27}
+          height={27}
+        />
         <h1
           className={`font-extrabold text-2xl ${
             isSidebarCollapsed ? 'hidden' : 'block'
