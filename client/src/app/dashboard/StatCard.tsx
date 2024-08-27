@@ -35,7 +35,9 @@ const StatCard = ({
       {/* HEADER */}
       <div>
         <div className="flex justify-between items-center mb-2 px-5 pt-4">
-          <h2 className="font-semibold text-lg text-gray-700 truncate">{title}</h2>
+          <h2 className="font-semibold text-lg text-gray-700 truncate">
+            {title}
+          </h2>
           <span className="text-xs text-gray-400 truncate">{dateRange}</span>
         </div>
         <hr />
