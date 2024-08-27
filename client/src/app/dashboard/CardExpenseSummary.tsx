@@ -48,7 +48,7 @@ const CardExpenseSummary = () => {
   const formattedTotalExpenses = formatCurrency(totalExpenses);
 
   return (
-    <div className="flex flex-col justify-between row-span-3 bg-white shadow-md rounded-2xl gap-5 xl:gap-1">
+    <div className="flex flex-col justify-between row-span-3 bg-white shadow-md rounded-2xl gap-5 xl:h-[250px] xl:gap-1">
       {isLoading ? (
         <div className="m-5">Loading...</div>
       ) : (
