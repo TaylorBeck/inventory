@@ -12,6 +12,8 @@ import {
 } from '@/components/ui/table';
 import { Switch } from '@/components/ui/switch';
 import { Input } from '@/components/ui/input';
+import { setIsDarkMode } from '@/state/index';
+import { useAppDispatch, useAppSelector } from '../redux';
 
 type UserSetting = {
   label: string;
@@ -28,6 +30,10 @@ const defaultSettings: UserSetting[] = [
 ];
 
 const UserSettings = () => {
+  const dispatch = useAppDispatch();
+  const isDarkMode = useAppSelector(state => state.global.isDarkMode);
+  defaultSettings[4].value = isDarkMode;
+
   const [userSettings, setUserSettings] =
     useState<UserSetting[]>(defaultSettings);
 
@@ -37,6 +43,10 @@ const UserSettings = () => {
         i === index ? { ...setting, value: !setting.value } : setting
       )
     );
+
+    if (index === 4) {
+      dispatch(setIsDarkMode(!isDarkMode));
+    }
   };
 
   const handleTextChange = (index: number, value: string) => {
@@ -70,6 +80,7 @@ const UserSettings = () => {
                     />
                   ) : (
                     <Input
+                      className={`text-base ${isDarkMode ? '!text-white' : ''}`}
                       type="text"
                       value={setting.value as string}
                       onChange={event =>
